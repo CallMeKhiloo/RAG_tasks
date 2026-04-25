@@ -7,10 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-front-end/node_modules
-front-end/dist
-front-end/dist-ssr
-.local
+chef-agent/front-end/node_modules
+chef-agent/front-end/dist
+chef-agent/front-end/dist-ssr
+chef-agent/.local
 
 # Editor directories and files
 .vscode/*
@@ -23,6 +23,6 @@ front-end/dist-ssr
 *.sln
 *.sw?
 
-back-end/.env
-back-end/__pycache__
-back-end/.venv
+chef-agent/back-end/.env
+chef-agent/back-end/__pycache__
+chef-agent/back-end/.venv

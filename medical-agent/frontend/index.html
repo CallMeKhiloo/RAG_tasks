@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediAgent AI - Multi-Modal Medical Assistant</title>
+    <meta name="description" content="AI Assistant for analyzing patient cases using MRI descriptions and text symptoms.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar for Context & Memory -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="ph-fill ph-heartbeat"></i>
+                <h2>MediAgent</h2>
+            </div>
+            
+            <div class="context-panel">
+
+                <div class="tools-panel">
+                    <h3>Available Tools</h3>
+                    <ul class="tool-list">
+                        <li class="tool-item active">
+                            <i class="ph ph-magnifying-glass"></i>
+                            <span>Hospital Search Tool</span>
+                        </li>
+                        <li class="tool-item active">
+                            <i class="ph ph-file-csv"></i>
+                            <span>CSV Storage Tool</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Interface -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="header-info">
+                    <h1>Patient Case Analysis</h1>
+                    <span class="status-badge"><span class="status-dot"></span> AI Active</span>
+                </div>
+            </header>
+
+            <div class="chat-history" id="chat-history">
+                <!-- Welcome Message -->
+                <div class="message ai">
+                    <div class="avatar"><i class="ph-fill ph-robot"></i></div>
+                    <div class="message-content">
+                        <p>Hello. I am MediAgent. Please provide the patient's symptoms and upload any relevant MRI scans or descriptions to begin the analysis.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Input Area -->
+            <footer class="input-area">
+                <div class="input-wrapper">
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                    <button class="upload-btn" id="upload-btn" title="Upload MRI/Scan">
+                        <i class="ph ph-paperclip"></i>
+                    </button>
+                    <textarea id="user-input" placeholder="Describe symptoms or request search..."></textarea>
+                    <button class="send-btn" id="send-btn">
+                        <i class="ph-fill ph-paper-plane-right"></i>
+                    </button>
+                </div>
+                <div id="image-preview-container" style="display: none; align-items: center; gap: 10px; margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid var(--border-color);">
+                    <img id="image-preview" src="" alt="Preview" style="max-height: 50px; border-radius: 4px;">
+                    <span id="image-name" style="font-size: 0.875rem; color: var(--text-secondary); flex: 1;"></span>
+                    <button id="remove-image-btn" style="background: none; border: none; color: var(--warning-color); cursor: pointer; font-size: 1.2rem;"><i class="ph ph-x-circle"></i></button>
+                </div>
+                <div class="disclaimer-bottom">
+                    This is not a medical diagnosis. Consult a doctor.
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
