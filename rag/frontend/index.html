@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA Artemis Plan Assistant</title>
+  <meta name="description" content="An AI assistant that answers questions about the NASA Artemis Plan document using RAG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <div class="app-wrapper">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-badge">🚀</span>
+        <span class="logo-text">ARTEMIS</span>
+      </div>
+      <p class="sidebar-subtitle">Plan Assistant</p>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="session-box">
+        <p class="sidebar-label">Session ID</p>
+        <code class="session-id" id="sessionIdDisplay">—</code>
+        <button class="btn-new-session" id="btnNewSession" title="Start a new conversation">
+          ↺ New Session
+        </button>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="doc-info">
+        <p class="sidebar-label">Document</p>
+        <div class="doc-card">
+          <span class="doc-icon">📄</span>
+          <div>
+            <p class="doc-name">NASA Artemis Plan</p>
+            <p class="doc-pages">74 pages · 260 chunks</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="tip-box">
+        <p class="sidebar-label">Try asking</p>
+        <button class="suggestion-chip" data-q="What is the Artemis program goal?">What is the Artemis goal?</button>
+        <button class="suggestion-chip" data-q="What is Artemis Phase 1?">What is Artemis Phase 1?</button>
+        <button class="suggestion-chip" data-q="What role does the Gateway play?">What is the Gateway?</button>
+        <button class="suggestion-chip" data-q="How does Artemis support going to Mars?">Artemis and Mars?</button>
+      </div>
+    </aside>
+
+    <!-- ── Main Chat ── -->
+    <main class="chat-main">
+
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="header-left">
+          <h1 class="header-title">NASA Artemis Plan Assistant</h1>
+          <span class="header-status" id="statusDot">
+            <span class="dot"></span> Ready
+          </span>
+        </div>
+        <div class="header-right">
+          <button class="btn-clear" id="btnClearChat" title="Clear chat messages">Clear Chat</button>
+        </div>
+      </header>
+
+      <!-- Messages -->
+      <section class="messages-area" id="messagesArea">
+        <!-- Welcome message injected by JS -->
+      </section>
+
+      <!-- Input -->
+      <footer class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="userInput"
+            class="chat-input"
+            placeholder="Ask anything about the NASA Artemis Plan…"
+            rows="1"
+            autocomplete="off"
+            spellcheck="false"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" title="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">This assistant only responds based on the NASA Artemis Plan document.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
